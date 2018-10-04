@@ -18,7 +18,7 @@ public class StudentManager {
 	public boolean addStudent(Student student) {
 		return false;
 	}
-	
+	//this is a delete student method
 	public boolean deleteStudent(String studentId) {
 		return false;
 	}
