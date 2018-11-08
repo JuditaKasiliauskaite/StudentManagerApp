@@ -8,6 +8,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -19,25 +20,42 @@ import javafx.stage.Stage;
 		//menuObj1.display();
 	//}
 	public class Runner extends Application {
+		
+		StudentManager sm = new StudentManager();
+		Scene scene1;
+		Scene scene2;
+		GridPane gridPane;
+		VBox vBox1;
 
 		@Override
 		public void start(Stage primaryStage) {
-
+			TextArea myOutput = new TextArea();
 			Text myText = new Text("Please select a Menu Option below:");
 			Button buttonLoadDB = new Button("Load DB");
-			TextField LoadDB = new TextField("Load DB");
+			TextField TfLoadDB = new TextField("Enter DB number");
+			
 			Button buttonAdd = new Button("Add Student");
-			TextField Add = new TextField("Add Student");
+			TextField TfAdd = new TextField("Enter StudentID");
+			buttonAdd.setOnAction(e ->{
+			sm.add(new Student (TfAdd.getText()));
+			});
+			
 			Button buttonDelete = new Button("Delete Student");
+			TextField TfDelete = new TextField("Enter Student Name");
 			Button buttonSearchByID = new Button("Search by ID");
-			TextField SearchByID = new TextField("Search By ID ");
+			TextField TfSearchByID = new TextField("Enter Student ID ");
 			Button buttonSearchByFirstName = new Button("Search by First Name");
-			TextField SearchByFirstName = new TextField("Search by First Name");
+			TextField TfSearchByFirstName = new TextField("Enter First Name");
+			
 			Button buttonShowTotal = new Button("Show Total Students");
-			TextField ShowTotal = new TextField("Show Total Students");
+			buttonShowTotal.setOnAction(e ->{
+				myOutput.setText(Integer.toString(sm.findTotalStudents()));
+			});
+			
+			//TextField ShowTotal = new TextField("Show Total Students");
 			Button buttonSaveDB = new Button("Save DB");
 			Button buttonQuit = new Button("Quit");	
-			TextArea myOutput = new TextArea();
+			
 
 			GridPane myGridPane = new GridPane();
 
@@ -62,11 +80,12 @@ import javafx.stage.Stage;
 			myGridPane.add(buttonSaveDB, 0, 7);
 			myGridPane.add(buttonQuit, 0, 8);
 			myGridPane.add(myOutput, 0, 9, 2, 1);
-			myGridPane.add(LoadDB, 1,1);
-			myGridPane.add(Add, 1,2);
-			myGridPane.add(SearchByID, 1,4);
-			myGridPane.add(SearchByFirstName, 1,5);
-			myGridPane.add(ShowTotal, 1,6);
+			myGridPane.add(TfLoadDB, 1,1);
+			myGridPane.add(TfAdd, 1,2);
+			myGridPane.add(TfDelete,1,3);
+			myGridPane.add(TfSearchByID, 1,4);
+			myGridPane.add(TfSearchByFirstName, 1,5);
+			//myGridPane.add(ShowTotal, 1,6);
 			
 
 			/* Preparing the Scene */
@@ -80,6 +99,7 @@ import javafx.stage.Stage;
 			primaryStage.setScene(scene);
 			// Displaying the stage
 			primaryStage.show();
+			
 		}
 
 		public static void main(String[] args) {
