@@ -6,6 +6,7 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -24,11 +25,16 @@ import javafx.stage.Stage;
 
 			Text myText = new Text("Please select a Menu Option below:");
 			Button buttonLoadDB = new Button("Load DB");
+			TextField LoadDB = new TextField("Load DB");
 			Button buttonAdd = new Button("Add Student");
+			TextField Add = new TextField("Add Student");
 			Button buttonDelete = new Button("Delete Student");
 			Button buttonSearchByID = new Button("Search by ID");
+			TextField SearchByID = new TextField("Search By ID ");
 			Button buttonSearchByFirstName = new Button("Search by First Name");
+			TextField SearchByFirstName = new TextField("Search by First Name");
 			Button buttonShowTotal = new Button("Show Total Students");
+			TextField ShowTotal = new TextField("Show Total Students");
 			Button buttonSaveDB = new Button("Save DB");
 			Button buttonQuit = new Button("Quit");	
 			TextArea myOutput = new TextArea();
@@ -55,7 +61,13 @@ import javafx.stage.Stage;
 			myGridPane.add(buttonShowTotal, 0, 6);
 			myGridPane.add(buttonSaveDB, 0, 7);
 			myGridPane.add(buttonQuit, 0, 8);
-			myGridPane.add(myOutput, 0, 9);
+			myGridPane.add(myOutput, 0, 9, 2, 1);
+			myGridPane.add(LoadDB, 1,1);
+			myGridPane.add(Add, 1,2);
+			myGridPane.add(SearchByID, 1,4);
+			myGridPane.add(SearchByFirstName, 1,5);
+			myGridPane.add(ShowTotal, 1,6);
+			
 
 			/* Preparing the Scene */
 			// Create a Scene by passing the root group object, height and width
