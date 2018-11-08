@@ -1,23 +1,30 @@
 package ie.gmit.studentmanager;
 
+//import java.io.Serializable;
+
 public class Course {
-	private String courseName;
-	private int level;
+	private String code;
+	private String name;
 
-	public String getCourseName() {
-		return courseName;
+	public Course(String code, String name) {
+		this.code = code;
+		this.name = name;
 	}
 
-	public void setCourseName(String newCourseName) {
-		courseName = newCourseName;
+	public String getCode() {
+		return code;
 	}
 
-	public int getLevel() {
-		return level;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
-	public void setLevel(int newLevel) {
-		level = newLevel;
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 }

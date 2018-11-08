@@ -1,50 +1,48 @@
 package ie.gmit.studentmanager;
 
-public class Address {
-	private String street;
+//import java.io.Serializable;
+
+public class Address //implements Serializable
+{
 	private int houseNumber;
+	private String street;
 	private String county;
-	private String City;
-	private String code;
+	private String eircode;
 
-	public String getStreet() {
-		return street;
-	}
-
-	public void setStreet(String street) {
-		this.street = street;
+	public Address(String eircode) {
+		this.eircode = eircode;
 	}
 
 	public int getHouseNumber() {
 		return houseNumber;
 	}
 
-	public void setHouseNumber(int houseNumber) {
-		this.houseNumber = houseNumber;
+	public String getStreet() {
+		return this.street;
 	}
 
 	public String getCounty() {
 		return county;
 	}
 
+	public String getEircode() {
+		return eircode;
+	}
+
+	public void setHouseNumber(int houseNumber) {
+		this.houseNumber = houseNumber;
+	}
+
+	public void setStreet(String street) {
+		this.street = street;
+	}
+
 	public void setCounty(String county) {
 		this.county = county;
 	}
 
-	public String getCity() {
-		return City;
-	}
-
-	public void setCity(String city) {
-		City = city;
-	}
-
-	public String getCode() {
-		return code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
+	public void setEircode(String eircode) {
+		this.eircode = eircode;
 	}
 
 }
